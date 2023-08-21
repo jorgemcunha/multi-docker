@@ -10,9 +10,6 @@ before_install:
 script:
   - docker run -e CI=true jorgemcunha/react-test npm test
 
-script:
-  - docker run jorgemcunha/react-test npm test -- --coverage
-
 after_sucess:
   - docker build -t jorgemcunha/multi-client ./client
   - docker build -t jorgemcunha/multi-nginx ./nginx
